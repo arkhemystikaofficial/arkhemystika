@@ -54,47 +54,14 @@ body {
 /* Niebla suave */
 .fog {
     position: absolute;
-    width: 150%;
-    height: 120%;
-    top: 0;
-    left: -25%;
-    background:
-        radial-gradient(circle at 30% 60%, rgba(255,255,255,0.05), transparent 60%),
-        radial-gradient(circle at 70% 40%, rgba(255,255,255,0.04), transparent 65%),
-        radial-gradient(circle at 50% 80%, rgba(255,255,255,0.03), transparent 70%);
-    animation: fogDrift 120s linear infinite;
-    pointer-events: none;
-}@keyframes fogDrift {
-    0%   { transform: translateX(0) translateY(0); }
-    50%  { transform: translateX(-3%) translateY(1%); }
-    100% { transform: translateX(0) translateY(0); }
+    width: 200%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.08), transparent 60%);
+    animation: fogMove 180s linear infinite;
 }
 
-
-  .water-entity {
-    position: absolute;
-    bottom: 22%;
-    left: 58%;
-    width: 160px;
-    height: 140px;
-    background: radial-gradient(ellipse at center,
-        rgba(0,0,0,0.45) 0%,
-        rgba(0,0,0,0.25) 40%,
-        transparent 75%);
-    opacity: 0;
-    filter: blur(14px);
-    animation: entityRise 28s ease-in-out infinite;
-    pointer-events: none;
-}
-
-@keyframes entityRise {
-    0%   { opacity: 0; transform: translateY(30px) scale(1); }
-    35%  { opacity: 0.12; transform: translateY(10px) scale(1.02); }
-    50%  { opacity: 0.16; transform: translateY(0px) scale(1.03); }
-    65%  { opacity: 0.12; transform: translateY(10px) scale(1.02); }
-    100% { opacity: 0; transform: translateY(30px) scale(1); }
-}
-  from { transform: translateX(0); }
+@keyframes fogMove {
+    from { transform: translateX(0); }
     to { transform: translateX(-50%); }
 }
 
@@ -105,25 +72,16 @@ body {
 }
 
 h1 {
-  h1 {
     font-size: 75px;
-    letter-spacing: 12px;
+    letter-spacing: 10px;
     color: #b89f6b;
-    text-shadow: 0 0 8px rgba(0,0,0,0.6);
-}
-
-
 }
 
 .tagline {
     font-size: 20px;
     font-style: italic;
-    opacity: 0.85;
+    opacity: 0.8;
     margin-top: 15px;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-
-
 }
 
 .button {
@@ -136,8 +94,6 @@ h1 {
     border-radius: 3px;
     transition: 0.3s;
 }
-
-
 
 .button:hover {
     background-color: #6e0d0d;
@@ -170,7 +126,6 @@ footer {
 
 <div class="hero">
     <div class="fog"></div>
-    <div class="water-entity"></div>
     <div class="content">
         <h1>ARKHE MYSTIKA</h1>
         <p class="tagline">
